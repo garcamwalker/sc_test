@@ -7,12 +7,14 @@ Feature: Safety Culture login
   Background:
     Given I am on the Safety Culture log in page
 
-  Scenario: User is directed to dashboard on successfully logging in
-#    When I enter a address
-     When I enter a correct_email address
-#    And I enter a 'correct password'
-#    And I select Log in
-#    Then I am directed to the Safety Culture dashboard
+  Scenario Outline: User is directed to dashboard on successfully logging in
+    When I enter a <correct email> and <correct password>
+    And I select Log in
+    Then I am taken to the Safety Culture dashboard
+
+    Examples: of user email and password:
+    | correct email          | correct password |
+    | garcamwalker@gmail.com | password123      |
 #
 #  Scenario: Validation message on log in - missing password
 #    When I enter my email address without a password
