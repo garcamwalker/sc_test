@@ -1,4 +1,4 @@
-@wip
+
 Feature: Safety Culture login
   As a user
   I want to log into my Safety Culture account
@@ -12,7 +12,7 @@ Feature: Safety Culture login
     And I select Log in
     Then I am taken to the Safety Culture dashboard
 
-    Examples: of user email and password:
+    Examples: of emails and passwords
     | correct email          | correct password |
     | garcamwalker@gmail.com | password123      |
 
@@ -21,7 +21,7 @@ Feature: Safety Culture login
     And I select Log in
     Then I see a password validation message
 
-    Examples: of user email
+    Examples: of emails
     | correct email          |
     | garcamwalker@gmail.com |
 
@@ -39,6 +39,6 @@ Feature: Safety Culture login
     And I select Log in
     Then I see a link to reset my password
 
-     Examples: of user email and password:
+     Examples: of user emails and passwords
     | incorrect email        | incorrect password |
     | reklawmacrag@gmail.com | 321password        |
