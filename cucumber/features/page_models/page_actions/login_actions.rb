@@ -1,12 +1,11 @@
 # encoding: UTF-8
 module PageModels
   module LoginActions
-
-    def input_email (email)
+    def input_email(email)
       @login_page.login_email.set(email)
     end
 
-    def input_password (password)
+    def input_password(password)
       @login_page.login_password.set(password)
     end
 

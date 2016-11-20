@@ -15,22 +15,30 @@ Feature: Safety Culture login
     Examples: of user email and password:
     | correct email          | correct password |
     | garcamwalker@gmail.com | password123      |
-#
-#  Scenario: Validation message on log in - missing password
-#    When I enter my email address without a password
-#    And I select Log in
-#    Then I see a password validation message
-#
-#  Scenario: Validation message on log in - missing email
-#    When I enter my password without an email address
-#    And I select Log in
-#    Then I see an email validation message
-#
-#  Scenario: Link to reset password when incorrect log in details provided
-#    When I enter incorrect log in details
-#    And I select Log in
-#    Then I see a link to reset my password
 
+  Scenario Outline: Validation message on log in - missing password
+    When I enter a <correct email> without a password
+    And I select Log in
+    Then I see a password validation message
 
+    Examples: of user email
+    | correct email          |
+    | garcamwalker@gmail.com |
 
+  Scenario Outline: Validation message on log in - missing email
+    When I enter my <password> without an email address
+    And I select Log in
+    Then I see an email validation message
 
+    Examples: of passwords
+    | password    |
+    | password123 |
+
+  Scenario Outline: Erro message on Log in - incorrect login details
+    When I enter an <incorrect email> or <incorrect password>
+    And I select Log in
+    Then I see a link to reset my password
+
+     Examples: of user email and password:
+    | incorrect email        | incorrect password |
+    | reklawmacrag@gmail.com | 321password        |
