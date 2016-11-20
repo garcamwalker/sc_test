@@ -1,18 +1,33 @@
+# Given(/^I am on the Safety Culture log in page$/) do
+#   visit('https://app.safetyculture.io/#/login')
+# end
 Given(/^I am on the Safety Culture log in page$/) do
-  visit('https://app.safetyculture.io/#/login')
+  @login_page = LoginPage.new
+  @login_page.load
+  expect(@login_page).to be_displayed
+  expect(@login_page).to be_secure
 end
 
-When(/^I enter correct log in details$/) do
+# When(/^I enter a address$/) do
+#   input_email
+# end
 
+When(/^I enter a (.*) address$/) do |email|
+  input_email (email)
 end
 
-When(/^I select Log in$/) do
-
-end
-
-Then(/^I am directed to the Safety Culture dashboard$/) do
-
-end
+# When(/^I enter a (.*)$/) do |password|
+#
+# end
+#
+#
+# When(/^I select Log in$/) do
+#
+# end
+#
+# Then(/^I am directed to the Safety Culture dashboard$/) do
+#
+# end
 #
 # When(/^I enter my email address without a password$/) do
 #   pending # Write code here that turns the phrase above into concrete actions
