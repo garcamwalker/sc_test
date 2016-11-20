@@ -11,7 +11,7 @@ bundle exec cucumber features/safetyculture_login.feature
 
 <b>Use of Page object Model</b>
 ---
-I have made use of the SitePrism gem as this is what I am familiar with. Siteprism offers a way to model each page as a class, and to then use instances of those classes in your tests. If a class represents a page then each element of the page is represented by a method that, when called, returns a reference to that element that can then be acted upon (clicked, set text value), or queried (is it enabled? visible?).
+I have made use of the SitePrism gem as this is what I am familiar with. Siteprism offers a way to model each page as a class, and to then use instances of those classes in your tests. If a class represents a page then each element of the page is represented by a method that, when called, returns a reference to that element that can then be acted upon.
 
 More Information: https://github.com/natritmeyer/site_prism
 
